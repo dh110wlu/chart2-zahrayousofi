@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js">
+</script>
+</head>
+<body>
+<canvas id= "myChart" width="600" height = "500"></canvas>
+<script>
+   var ctx = document.getElementById('myChart');
+   var lineChart = new Chart(ctx, {
+     type: 'line',
+     data:{
+       labels:
+               ["Sep.03", "Sep.04","Sep.08", "Sep.10","Sep.11", "Sep.17", "Sep.24","Sep.27", "Oct.01", "Oct.05", "Oct.08", "Oct.12", "Oct.15", "Oct.18", "Oct.22"],
+       datasets:[{
+                data:[0,1,2,3,4,5,6,7,8,9,9,10,10,11,12],
+                backgroundColor:"rgba(0,255,0,0.6)",
+                borderColor:"green",
+                label: "Wins",
+       },
+       {
+                data:[1,1,1,1,1,1,1,1,1,1,2,2,3,3,3],
+                backgroundColor:"rgba(255,0,0,0.6)",
+                borderColor:"red",
+                label: "Losses",
+       },
+       {
+                data:[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+                backgroundColor:"rgba(255,255,0,0.6)",
+                borderColor: "yellow",
+                label: "Ties",
+       },
+       {
+                data:[0,3,4,3,1,2,5,4,2,5,0,2,0,4,2],
+                backgroundColor:"rgba(0,0,128,0.6)",
+                fill: false,
+                label: "General's Score",
+                pointStyle:"star",
+                pointSize: 25,
+       },
+       {
+                data:[2,2,1,1,0,1,0,0,0,0,4,1,1,1,0],
+                backgroundColor:"rgba(0,0,0,0.6)",
+                fill: false,
+                label: "Opponent's Score",
+                pointStyle:'triangle',
+                pointSize: 25,
+       }
+      ]
+    },
+     options: {
+            title: {
+              text: 'Generals Men\'s Soccer 2016-17',
+              fontSize: 24,
+              display: true,
+       },
+
+            tooltips: {
+             intersect: false,
+             mode: "index",
+           },
+             legend:{
+                 position: 'right',
+                 fontStyle: 'Times New Roman',
+                 fontSize: '16pt'
+        },
+
+    }
+  });
+</script>
+<div id="chartContainer" style="height: 400px; width: 500px;"></div>
+</body>
+</html>
